@@ -32,7 +32,7 @@ namespace simpleparser
         "POTENTIAL_DOUBLE",
         "POTENTIAL_COMMENT",
         "COMMENT",
-    }
+    };
 
     class Token
     {

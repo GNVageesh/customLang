@@ -1,4 +1,5 @@
 #include "Tokenizer.hpp"
+#include <iostream>
 #include <stdexcept>
 
 namespace simpleparser
