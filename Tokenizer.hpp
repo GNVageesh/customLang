@@ -12,8 +12,12 @@ namespace simpleparser
         IDENTIFIER,
         LIT_INTEGER,
         LIT_STRING,
+        LIT_DOUBLE,
         OPERATOR,
-        ESCAPE_SEQ
+        ESCAPE_SEQ,
+        POTENTIAL_DOUBLE,
+        POTENTIAL_COMMENT,
+        COMMENT
     };
 
     class Token
