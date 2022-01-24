@@ -41,6 +41,12 @@ namespace simpleparser
                 currentToken.mType = LIT_STRING;
                 continue;
             }
+            else if (currentToken.mType == POTENTIAL_COMMENT && currCh != '/')
+            {
+                currentToken.mType = OPERATOR;
+                endToken(currentToken, tokens);
+                continue;
+            }
 
             switch (currCh)
             {
@@ -210,6 +216,11 @@ namespace simpleparser
         }
         token.mType = WHITESPACE;
         token.mText.erase();
+    }
+
+    void Token::DebugPrint() const
+    {
+        cout << "Token[" << sTokenTypeStrings[mType] << ", \"" << mText << "\", " << mLineNumber << "]" << endl;
     }
 
 } // namespace simpleparser

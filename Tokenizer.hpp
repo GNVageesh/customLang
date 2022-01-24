@@ -1,4 +1,5 @@
 #pragma once
+
 #include <vector>
 #include <string>
 
@@ -20,6 +21,19 @@ namespace simpleparser
         COMMENT
     };
 
+    static const char *sTokenTypeStrings[] = {
+        "WHITESPACE",
+        "IDENTIFIER",
+        "LIT_INTEGER",
+        "LIT_STRING",
+        "LIT_DOUBLE",
+        "OPERATOR",
+        "ESCAPE_SEQ",
+        "POTENTIAL_DOUBLE",
+        "POTENTIAL_COMMENT",
+        "COMMENT",
+    }
+
     class Token
     {
     public:
@@ -28,9 +42,9 @@ namespace simpleparser
             WHITESPACE
         };
         std::string mText;
-        size_t mStartOffset{0};
-        size_t mEndOffset{0};
         size_t mLineNumber{0};
+
+        void DebugPrint() const;
     };
 
     class Tokenizer
